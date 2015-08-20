@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 require 'test/unit'
-require 'miniTest'
+require 'minitest'
 #require 'phantomjs'
 #require 'net/http'
 
