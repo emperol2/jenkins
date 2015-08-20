@@ -108,6 +108,12 @@ module Test
       end
     end
 
+    def test_only_true
+
+      assert true
+
+    end  
+
 
     def verify_visible_image(how, what)
       begin
