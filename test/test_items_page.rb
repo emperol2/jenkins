@@ -129,7 +129,7 @@ module Test
       end
 
       itemsArray.uniq.each do |a|
-        @driver.manage().deleteAllCookies();
+        @driver.manage().delete_all_cookies
         sleep 5
         
         @driver.navigate.to(a)
