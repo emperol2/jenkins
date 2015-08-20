@@ -42,6 +42,7 @@ module Test
       end
 
       itemsArray.uniq.each do |a|
+        sleep 2
         @driver.navigate.to(a)
         #p a
         imgList = @driver.find_elements(:tag_name, 'img')
@@ -94,6 +95,7 @@ module Test
           #   res = Net::HTTP.get_response(URI(i.attribute('src')))
           #   assert_equal('200', res.code, "This is error #{i.attribute('src')}")
           # end
+          sleep 2
           if i.attribute('src').include?('square_thumbnail') == true
             p i.attribute('src')
             res = Net::HTTP.get_response(URI(i.attribute('src')))
@@ -127,6 +129,7 @@ module Test
       end
 
       itemsArray.uniq.each do |a|
+        sleep 2
         @driver.navigate.to(a)
         #p a
         begin
