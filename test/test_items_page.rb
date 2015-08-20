@@ -6,7 +6,9 @@ module Test
   class TestItemsPage < Test::Unit::TestCase
 
     def setup
-      @driver = Selenium::WebDriver.for :phantomjs
+      client = Selenium::WebDriver::Remote::Http::Default.new
+      client.timeout = 300
+      @driver = Selenium::WebDriver.for :phantomjs, :http_client => client
       @driver.navigate.to('http://www.bk.com/menu')
       #@driver.navigate.to('http://originstg.bk.com/menu')
       @driver.manage.timeouts.implicit_wait = 60
