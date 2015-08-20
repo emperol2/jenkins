@@ -25,7 +25,6 @@ module Test
 
     def test_visible_carousel_big_image
       verify_visible_image(:css, '.owl-item:not(.cloned) .big-img')
-      @driver.quit
     end
 
     def test_visible_carousel_mobile_image
@@ -58,7 +57,6 @@ module Test
         res = Net::HTTP.get_response(URI(a))
         assert_not_equal('404', res.code, "This is error #{a}")
       end
-      @driver.quit
     end
 
     def test_home_take_a_break
@@ -73,7 +71,6 @@ module Test
       verify_visible_image_in_css(:css, '#flickWrapper .item:last-child .front')
       verify_visible_image_in_css(:css, '#flickWrapper .item:last-child .bgFlip')
       assert @driver.find_element(:css, 'h4.subtitle').text.include?'swipe it, flip it, share it'
-      @driver.quit
     end
 
     def test_home_find_restaurant
@@ -103,7 +100,6 @@ module Test
         verify_visible_image_in_css(:css, '.bkDelivers')
         assert @driver.find_element(:css, 'section.bkDelivers h3.title').text.include?'APP'
         assert_not_nil @driver.find_element(:css, 'section.bkDelivers h4.subtitle').text
-        @driver.quit
     end
 
     def test_home_bk_callouts
@@ -112,7 +108,6 @@ module Test
       @driver.find_elements(:css, 'section.bkCallouts .row .col-sm-3').each do |c|
         assert_not_nil c.text
       end
-      @driver.quit
     end
 
 
