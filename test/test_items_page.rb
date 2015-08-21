@@ -130,7 +130,7 @@ module Test
 
       itemsArray.uniq.each do |a|
         @driver.manage().delete_all_cookies
-        sleep 5
+        sleep 2
         
         @driver.navigate.to(a)
         #p a
