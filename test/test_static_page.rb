@@ -77,7 +77,7 @@ module Test
       assert element_present?(:css, 'div.owl-next .arrow'), 'Right arrow should display here'
 
       # Orange Frame
-      verify_test { assert_equal 'url(http://www.burgerking.co.uk/sites/all/themes/custom/bk_theme/img/made-to-order-slider/orange-frame.png)', @driver.find_element(:css, '.active.center .frame').css_value('background-image') }
+      just_verify { assert_equal 'url(http://www.burgerking.co.uk/sites/all/themes/custom/bk_theme/img/made-to-order-slider/orange-frame.png)', @driver.find_element(:css, '.active.center .frame').css_value('background-image') }
 
       # Prev Slider
       @driver.find_element(:css, 'div.owl-prev .arrow').click
@@ -188,7 +188,7 @@ module Test
       false
     end
 
-    def verify_test(&blk)
+    def just_verify(&blk)
       yield
     rescue MiniTest::Assertion => ex
       @verification_errors << ex
