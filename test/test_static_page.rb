@@ -190,7 +190,7 @@ module Test
 
     def just_verify(&blk)
       yield
-    rescue MiniTest::Assertion => ex
+    rescue Test::Unit::AssertionFailedError, Minitest::Assertion => ex
       @verification_errors << ex
     end
 
